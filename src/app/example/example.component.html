@@ -1,0 +1,21 @@
+<p>example works!</p>
+<span class="subtitle">Example form</span>
+
+<form (ngSubmit)="onSubmit()" #exampleForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name"
+            required
+           [(ngModel)]="model.name" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="nickname">Nickname</label>
+    <input type="text" class="form-control" id="nickname"
+           [(ngModel)]="model.nickname" name="nickname">
+  </div>
+
+
+  <button type="submit" class="btn btn-success" [disabled]="!exampleForm.form.valid">Submit</button>
+  <button type="button" class="btn btn-default" (click)="reset(); exampleForm.reset()">Reset</button>
+</form>
